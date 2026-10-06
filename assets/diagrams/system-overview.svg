@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">Speaker Cleaner system overview</title>
+  <desc id="d">Four layers. Presentation: first-run flow, home, five mode screens, paywall and settings. App state: a startup phase machine, a preferences repository over local key-value storage, and a change-notifier state shared through Provider. Core services: the audio engine, an ads stack, billing, telemetry and notifications with update prompts. External platform pieces: the native audio player and audio session, the mobile ads SDK with a consent form, the store billing library, Firebase services and Google Play in-app updates. There is no application server of its own.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e6eefb; }
+      .h { font-size: 26px; font-weight: 700; }
+      .s { font-size: 15px; fill: #93a9c9; }
+      .b { font-size: 16px; font-weight: 600; }
+      .m { font-size: 13px; fill: #b3c4de; }
+      .k { font-size: 12px; fill: #39d0ff; letter-spacing: 1.5px; font-weight: 700; }
+      .k2 { font-size: 12px; fill: #a99bff; letter-spacing: 1.5px; font-weight: 700; }
+      .k3 { font-size: 12px; fill: #7fe3c4; letter-spacing: 1.5px; font-weight: 700; }
+      .k4 { font-size: 12px; fill: #9db4d6; letter-spacing: 1.5px; font-weight: 700; }
+      .ui { fill: #12233d; stroke: #2e86b5; stroke-width: 1.5; }
+      .st { fill: #1a1f45; stroke: #7b6cff; stroke-width: 2; }
+      .co { fill: #14283f; stroke: #39d0ff; stroke-width: 1.5; }
+      .ex { fill: #16213a; stroke: #4a6a9a; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .arrow { stroke: #39d0ff; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#39d0ff"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="720" rx="16" fill="#0a1224"/>
+  <text x="30" y="46" class="h">System overview</text>
+  <text x="30" y="72" class="s">One Flutter codebase, local state, no application server of its own. Cloud pieces are managed platform services.</text>
+
+  <text x="30" y="104" class="k4">PRESENTATION</text>
+  <rect x="30" y="112" width="212" height="104" rx="12" class="ui"/>
+  <text x="46" y="140" class="b">First run</text>
+  <text x="46" y="166" class="m">Language choice,</text>
+  <text x="46" y="186" class="m">onboarding, four-step</text>
+  <text x="46" y="206" class="m">how-it-works</text>
+  <rect x="262" y="112" width="212" height="104" rx="12" class="ui"/>
+  <text x="278" y="140" class="b">Home</text>
+  <text x="278" y="166" class="m">Auto Clean hero card,</text>
+  <text x="278" y="186" class="m">mode cards, premium</text>
+  <text x="278" y="206" class="m">chip, exit dialog</text>
+  <rect x="494" y="112" width="212" height="104" rx="12" class="ui"/>
+  <text x="510" y="140" class="b">Mode screens</text>
+  <text x="510" y="166" class="m">Auto, Manual, Water,</text>
+  <text x="510" y="186" class="m">Dust, Speaker Test</text>
+  <text x="510" y="206" class="m">(portrait only)</text>
+  <rect x="726" y="112" width="212" height="104" rx="12" class="ui"/>
+  <text x="742" y="140" class="b">Paywall</text>
+  <text x="742" y="166" class="m">Monthly and yearly</text>
+  <text x="742" y="186" class="m">plan cards, restore</text>
+  <text x="742" y="206" class="m">purchases</text>
+  <rect x="958" y="112" width="212" height="104" rx="12" class="ui"/>
+  <text x="974" y="140" class="b">Settings</text>
+  <text x="974" y="166" class="m">Language, sound, haptics,</text>
+  <text x="974" y="186" class="m">policies, disclaimer,</text>
+  <text x="974" y="206" class="m">more apps, share</text>
+
+  <path d="M600 216 V252" class="arrow"/>
+
+  <text x="30" y="250" class="k2">APP STATE</text>
+  <rect x="30" y="258" width="1140" height="80" rx="12" class="st"/>
+  <text x="46" y="286" class="b">Startup phases and preferences</text>
+  <text x="46" y="312" class="m">A phase machine (initialising, splash, routing) decides the first screen. A preferences repository over local key-value storage holds language,</text>
+  <text x="46" y="330" class="m">first-run flags, sound and haptic switches and prompt timestamps. State is a change notifier shared with Provider; the premium flag is mirrored from billing.</text>
+
+  <path d="M600 338 V374" class="arrow"/>
+
+  <text x="30" y="372" class="k">CORE SERVICES</text>
+  <rect x="30" y="380" width="212" height="132" rx="12" class="co"/>
+  <text x="46" y="408" class="b">Audio engine</text>
+  <text x="46" y="434" class="m">Stage lists to PCM,</text>
+  <text x="46" y="454" class="m">temp-file playback,</text>
+  <text x="46" y="474" class="m">session and cancel</text>
+  <text x="46" y="494" class="m">tokens</text>
+  <rect x="262" y="380" width="212" height="132" rx="12" class="co"/>
+  <text x="278" y="408" class="b">Ads stack</text>
+  <text x="278" y="434" class="m">Consent, banner, native,</text>
+  <text x="278" y="454" class="m">interstitial, rewarded,</text>
+  <text x="278" y="474" class="m">app-open; remote switches</text>
+  <text x="278" y="494" class="m">and cooldowns</text>
+  <rect x="494" y="380" width="212" height="132" rx="12" class="co"/>
+  <text x="510" y="408" class="b">Billing</text>
+  <text x="510" y="434" class="m">Subscription products,</text>
+  <text x="510" y="454" class="m">purchase stream, restore,</text>
+  <text x="510" y="474" class="m">cached premium flag</text>
+  <rect x="726" y="380" width="212" height="132" rx="12" class="co"/>
+  <text x="742" y="408" class="b">Telemetry</text>
+  <text x="742" y="434" class="m">Typed analytics events,</text>
+  <text x="742" y="454" class="m">route and screen tracker,</text>
+  <text x="742" y="474" class="m">crash reports, startup</text>
+  <text x="742" y="494" class="m">performance trace</text>
+  <rect x="958" y="380" width="212" height="132" rx="12" class="co"/>
+  <text x="974" y="408" class="b">Messaging, updates</text>
+  <text x="974" y="434" class="m">Push messaging with a</text>
+  <text x="974" y="454" class="m">pre-permission sheet,</text>
+  <text x="974" y="474" class="m">in-app update prompts,</text>
+  <text x="974" y="494" class="m">connectivity checks</text>
+
+  <path d="M136 512 V560" class="arrow"/>
+  <path d="M368 512 V560" class="arrow"/>
+  <path d="M600 512 V560" class="arrow"/>
+  <path d="M832 512 V560" class="arrow"/>
+  <path d="M1064 512 V560" class="arrow"/>
+
+  <text x="30" y="552" class="k3">PLATFORM AND SERVICES</text>
+  <rect x="30" y="566" width="212" height="104" rx="12" class="ex"/>
+  <text x="46" y="594" class="b">Audio plugin + OS</text>
+  <text x="46" y="620" class="m">Native media player,</text>
+  <text x="46" y="640" class="m">audio session,</text>
+  <text x="46" y="660" class="m">device output</text>
+  <rect x="262" y="566" width="212" height="104" rx="12" class="ex"/>
+  <text x="278" y="594" class="b">Mobile ads SDK</text>
+  <text x="278" y="620" class="m">Ad formats plus the</text>
+  <text x="278" y="640" class="m">user-messaging consent</text>
+  <text x="278" y="660" class="m">form</text>
+  <rect x="494" y="566" width="212" height="104" rx="12" class="ex"/>
+  <text x="510" y="594" class="b">Store billing</text>
+  <text x="510" y="620" class="m">Play Billing through</text>
+  <text x="510" y="640" class="m">the in-app purchase</text>
+  <text x="510" y="660" class="m">plugin</text>
+  <rect x="726" y="566" width="212" height="104" rx="12" class="ex"/>
+  <text x="742" y="594" class="b">Firebase</text>
+  <text x="742" y="620" class="m">Analytics, Crashlytics,</text>
+  <text x="742" y="640" class="m">Performance, Messaging,</text>
+  <text x="742" y="660" class="m">Firestore (read only)</text>
+  <rect x="958" y="566" width="212" height="104" rx="12" class="ex"/>
+  <text x="974" y="594" class="b">Play updates</text>
+  <text x="974" y="620" class="m">In-app update API for</text>
+  <text x="974" y="640" class="m">flexible updates on</text>
+  <text x="974" y="660" class="m">Android</text>
+
+  <text x="30" y="698" class="s">Labels are conceptual and do not correspond to production identifiers.</text>
+</svg>

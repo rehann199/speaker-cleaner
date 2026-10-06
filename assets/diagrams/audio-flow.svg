@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="t d">
+  <title id="t">Speaker Cleaner audio flow</title>
+  <desc id="d">A mode screen selects an ordered list of stages: sweeps, steady tones, pulsed tones and pink noise. A renderer synthesises the stages into one phase-continuous 16-bit mono sample stream at 44.1 kHz with short fades and routes it to the left channel, the right channel or both. Long sequences are written to a single temporary WAV file and short tones are handed over as in-memory bytes. A configured audio session and a native player plugin play the audio through the device output, whose level follows the device volume. The player position stream drives the countdown, progress ring and stage label. A separate timer drives haptic ticks, and the tap click is a bundled sample on its own player. The run stops on the stop button, on completion, when leaving the screen, and when the app is paused or detached.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e6eefb; }
+      .h { font-size: 26px; font-weight: 700; }
+      .s { font-size: 15px; fill: #93a9c9; }
+      .b { font-size: 16px; font-weight: 600; }
+      .m { font-size: 13px; fill: #b3c4de; }
+      .k { font-size: 12px; fill: #39d0ff; letter-spacing: 1.5px; font-weight: 700; }
+      .k2 { font-size: 12px; fill: #a99bff; letter-spacing: 1.5px; font-weight: 700; }
+      .k3 { font-size: 12px; fill: #7fe3c4; letter-spacing: 1.5px; font-weight: 700; }
+      .n { font-size: 13px; fill: #93a9c9; }
+      .c1 { fill: #12233d; stroke: #2e86b5; stroke-width: 1.5; }
+      .c2 { fill: #14283f; stroke: #39d0ff; stroke-width: 2; }
+      .c3 { fill: #1a1f45; stroke: #7b6cff; stroke-width: 2; }
+      .c4 { fill: #112c36; stroke: #2fbfae; stroke-width: 1.5; }
+      .c5 { fill: #16213a; stroke: #4a6a9a; stroke-width: 1.5; }
+      .arrow { stroke: #39d0ff; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+      .dash { stroke: #a99bff; stroke-width: 2; fill: none; stroke-dasharray: 6 5; marker-end: url(#c); }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#39d0ff"/>
+    </marker>
+    <marker id="c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a99bff"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="660" rx="16" fill="#0a1224"/>
+  <text x="30" y="46" class="h">Generated audio, from stage list to speaker</text>
+  <text x="30" y="72" class="s">Every tone is synthesised on the device at play time. No tone files are bundled; only a short UI click sample is.</text>
+
+  <rect x="30" y="100" width="196" height="200" rx="12" class="c1"/>
+  <text x="46" y="126" class="k">1  STAGE LIST</text>
+  <text x="46" y="154" class="b">Mode sequence</text>
+  <text x="46" y="182" class="m">Sweep: start to end Hz</text>
+  <text x="46" y="204" class="m">Steady: one frequency</text>
+  <text x="46" y="226" class="m">Pulse: tone on / off</text>
+  <text x="46" y="248" class="m">Pink noise: broadband</text>
+  <text x="46" y="276" class="n">Each stage has a duration</text>
+
+  <rect x="266" y="100" width="196" height="200" rx="12" class="c2"/>
+  <text x="282" y="126" class="k">2  RENDER</text>
+  <text x="282" y="154" class="b">Synthesised PCM</text>
+  <text x="282" y="182" class="m">Phase-continuous sine</text>
+  <text x="282" y="204" class="m">16-bit, 44.1 kHz</text>
+  <text x="282" y="226" class="m">Short fades, no clicks</text>
+  <text x="282" y="248" class="m">Channel: L, R or both</text>
+  <text x="282" y="276" class="n">One buffer per sequence</text>
+
+  <rect x="502" y="100" width="196" height="200" rx="12" class="c1"/>
+  <text x="518" y="126" class="k">3  HAND-OFF</text>
+  <text x="518" y="154" class="b">File or bytes</text>
+  <text x="518" y="182" class="m">Long runs: one temp</text>
+  <text x="518" y="204" class="m">WAV file, played by path</text>
+  <text x="518" y="226" class="m">Short tones: in-memory</text>
+  <text x="518" y="248" class="m">bytes</text>
+  <text x="518" y="276" class="n">Old temp file removed</text>
+
+  <rect x="738" y="100" width="196" height="200" rx="12" class="c3"/>
+  <text x="754" y="126" class="k2">4  SESSION + PLAYER</text>
+  <text x="754" y="154" class="b">Audio session</text>
+  <text x="754" y="182" class="m">Playback category</text>
+  <text x="754" y="204" class="m">Utility-sound content</text>
+  <text x="754" y="226" class="m">Not paused when ducked</text>
+  <text x="754" y="248" class="m">Native player plugin</text>
+  <text x="754" y="276" class="n">Released on stop</text>
+
+  <rect x="974" y="100" width="196" height="200" rx="12" class="c4"/>
+  <text x="990" y="126" class="k3">5  OUTPUT</text>
+  <text x="990" y="154" class="b">Device output</text>
+  <text x="990" y="182" class="m">Level follows device</text>
+  <text x="990" y="204" class="m">volume, fixed low gain</text>
+  <text x="990" y="226" class="m">The OS chooses the</text>
+  <text x="990" y="248" class="m">output route</text>
+  <text x="990" y="276" class="n">No in-app route picker</text>
+
+  <path d="M226 200 H262" class="arrow"/>
+  <path d="M462 200 H498" class="arrow"/>
+  <path d="M698 200 H734" class="arrow"/>
+  <path d="M934 200 H970" class="arrow"/>
+
+  <path d="M836 300 V344 H212 V360" class="dash"/>
+  <text x="528" y="336" class="n">player position stream</text>
+
+  <rect x="30" y="364" width="364" height="190" rx="12" class="c5"/>
+  <text x="46" y="390" class="k">PROGRESS IN THE UI</text>
+  <text x="46" y="418" class="b">Position drives the screen</text>
+  <text x="46" y="446" class="m">The position stream from the player drives</text>
+  <text x="46" y="468" class="m">the countdown, the progress ring and the</text>
+  <text x="46" y="490" class="m">active stage label (kind plus frequency</text>
+  <text x="46" y="512" class="m">range). Stage lookup is a pure function of</text>
+  <text x="46" y="534" class="m">elapsed time and the stage list.</text>
+
+  <rect x="418" y="364" width="364" height="190" rx="12" class="c5"/>
+  <text x="434" y="390" class="k2">SEPARATE FEEDBACK PATHS</text>
+  <text x="434" y="418" class="b">Haptics and tap click</text>
+  <text x="434" y="446" class="m">A timer fires a light haptic tick while a run</text>
+  <text x="434" y="468" class="m">is active; a Settings switch turns it off.</text>
+  <text x="434" y="490" class="m">The tap click is a bundled sample on its own</text>
+  <text x="434" y="512" class="m">player, so a button press never touches the</text>
+  <text x="434" y="534" class="m">tone session.</text>
+
+  <rect x="806" y="364" width="364" height="190" rx="12" class="c5"/>
+  <text x="822" y="390" class="k3">STOP AND CANCEL RULES</text>
+  <text x="822" y="418" class="b">One run at a time</text>
+  <text x="822" y="446" class="m">Stop, completion and leaving the screen end</text>
+  <text x="822" y="468" class="m">the run; a session counter discards stale</text>
+  <text x="822" y="490" class="m">work. App paused or detached: hard stop.</text>
+  <text x="822" y="512" class="m">Brief inactive states (shade, volume HUD)</text>
+  <text x="822" y="534" class="m">do not stop the tone.</text>
+
+  <text x="30" y="596" class="s">The app plays the signals above and makes no claim about any physical effect. Its own disclaimer says results vary by device.</text>
+  <text x="30" y="620" class="s">Labels are conceptual and do not correspond to production identifiers.</text>
+</svg>
