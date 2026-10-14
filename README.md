@@ -13,6 +13,8 @@ Flutter · Dart · PCM synthesis · audioplayers · audio_session · Firebase
 ![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
 ![Audio](https://img.shields.io/badge/Audio-synthesized%20PCM-7C4DFF)
+![Downloads](https://img.shields.io/badge/Google%20Play-10K%2B%20downloads-3DDC84?logo=googleplay&logoColor=white)
+![For sale](https://img.shields.io/badge/Product-For%20sale-7C4DFF)
 
 <table>
   <tr>
@@ -33,6 +35,15 @@ Flutter · Dart · PCM synthesis · audioplayers · audio_session · Firebase
 </p>
 
 The released product is **Android only** on Google Play. The Flutter project also contains iOS-oriented dependencies (for example a tracking-consent prompt), but this repository does not link to an App Store listing.
+
+<!-- fw-sale:start -->
+## Reach & Availability
+
+| | |
+|---|---|
+| **Google Play downloads** | **10K+** (the count shown on the Play listing) |
+| **Product sale** | This is a Future Watch product and it is **available to buy or license** for your own business. [Ask about buying Speaker Cleaner](https://futurewatch.co/contact?type=product&ref=speaker-cleaner) or email [rehan@futurewatch.co](mailto:rehan@futurewatch.co). |
+<!-- fw-sale:end -->
 
 ## Product at a Glance
 
